@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Bounty Search Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Bug Bounty Search Engine</h1>
+            <p class="subtitle">Advanced reconnaissance toolkit for security researchers</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">64</div>
+                    <div class="stat-label">Search Queries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Platforms</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <div class="search-input-group">
+                <label for="target">Target Domain:</label>
+                <input type="text" id="target" placeholder="example.com">
+            </div>
+        </div>
+
+        <div class="categories">
+            <div class="category">
+                <h2 class="category-title">File & Directory Discovery</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(1)">Directory Listing Vulnerabilities</button>
+                    <button class="search-btn" onclick="googleSearch(2)">Exposed Configuration Files</button>
+                    <button class="search-btn" onclick="googleSearch(3)">Exposed Database Files</button>
+                    <button class="search-btn" onclick="googleSearch(4)">Exposed Log Files</button>
+                    <button class="search-btn" onclick="googleSearch(5)">Backup & Old Files</button>
+                    <button class="search-btn" onclick="googleSearch(8)">Publicly Exposed Documents</button>
+                    <button class="search-btn" onclick="googleSearch(46)">Sensitive conf.php Files</button>
+                    <button class="search-btn" onclick="googleSearch(56)">download.php Files</button>
+                    <button class="search-btn" onclick="googleSearch(60)">users.yml / admin.yml / config.yml</button>
+                    <button class="search-btn" onclick="googleSearch(63)">Index of /etc</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">WordPress & CMS</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(10)">Find WordPress Sites</button>
+                    <button class="search-btn" onclick="googleSearch(20)">Find WordPress #2</button>
+                    <button class="search-btn" onclick="googleSearch(33)">WP Config Backup</button>
+                    <button class="search-btn" onclick="googleSearch(40)">wp-content Juicy Info</button>
+                    <button class="search-btn" onclick="googleSearch(43)">WordPress Juicy File 1</button>
+                    <button class="search-btn" onclick="googleSearch(45)">Vulnerable WP Plugin (Contact Form 7)</button>
+                    <button class="search-btn" onclick="googleSearch(50)">WordPress Juicy File 2</button>
+                    <button class="search-btn" onclick="googleSearch(54)">WordPress Juicy File 3</button>
+                    <button class="search-btn" onclick="googleSearch(58)">WordPress Backup Files</button>
+                    <button class="search-btn" onclick="googleSearch(51)">Drupal Login Pages</button>
+                    <button class="search-btn" onclick="googleSearch(52)">Joomla Database Path</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">Database & SQL</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(7)">SQL Error Messages</button>
+                    <button class="search-btn" onclick="googleSearch(53)">SQL Query Files</button>
+                    <button class="search-btn" onclick="googleSearch(59)">MySQL Configuration Files</button>
+                    <button class="search-btn" onclick="googleSearch(64)">SQL Directories & Databases</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">Authentication & Admin</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(6)">Login Pages</button>
+                    <button class="search-btn" onclick="googleSearch(42)">Admin Portal (admin.aspx)</button>
+                    <button class="search-btn" onclick="googleSearch(48)">Sensitive Admin Backups</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">Vulnerabilities & Exploits</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(9)">phpinfo() Pages</button>
+                    <button class="search-btn" onclick="googleSearch(11)">Finding Backdoors</button>
+                    <button class="search-btn" onclick="googleSearch(12)">Install / Setup Files</button>
+                    <button class="search-btn" onclick="googleSearch(13)">Open Redirects</button>
+                    <button class="search-btn" onclick="googleSearch(14)">Apache STRUTS RCE</button>
+                    <button class="search-btn" onclick="googleSearch(17)">.htaccess Sensitive Files</button>
+                    <button class="search-btn" onclick="googleSearch(22)">Test CrossDomain.xml</button>
+                    <button class="search-btn" onclick="googleSearch(38)">Vulnerable GeoServers</button>
+                    <button class="search-btn" onclick="googleSearch(39)">ArcGIS REST Services</button>
+                    <button class="search-btn" onclick="googleSearch(44)">File Upload Scripts</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">Subdomain & Asset Discovery</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(18)">Find Subdomains</button>
+                    <button class="search-btn" onclick="googleSearch(19)">Find Sub-Subdomains</button>
+                    <button class="search-btn" onclick="googleSearch(30)">Certificate Transparency (crt.sh)</button>
+                    <button class="search-btn" onclick="googleSearch(34)">Censys IPv4 Search</button>
+                    <button class="search-btn" onclick="googleSearch(35)">Censys Domain Search</button>
+                    <button class="search-btn" onclick="googleSearch(36)">Censys Certificates</button>
+                    <button class="search-btn" onclick="googleSearch(37)">SHODAN Search</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">Flash & Media Files</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(24)">Find SWF Files (Google)</button>
+                    <button class="search-btn" onclick="googleSearch(25)">Find MIME-SWF (Yandex)</button>
+                    <button class="search-btn" onclick="googleSearch(26)">SWF Links (Archive)</button>
+                    <button class="search-btn" onclick="googleSearch(27)">MIME-SWF Links (Archive)</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">Archive & Historical Data</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(28)">Web Archive Search #1</button>
+                    <button class="search-btn" onclick="googleSearch(29)">Web Archive Search #2</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">OSINT & Social</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(15)">Pastebin Entries</button>
+                    <button class="search-btn" onclick="googleSearch(16)">LinkedIn Employees</button>
+                    <button class="search-btn" onclick="googleSearch(21)">GitHub Code Search</button>
+                    <button class="search-btn" onclick="googleSearch(23)">ThreatCrowd</button>
+                    <button class="search-btn" onclick="googleSearch(31)">OpenBugBounty</button>
+                    <button class="search-btn" onclick="googleSearch(32)">Reddit Mentions</button>
+                    <button class="search-btn" onclick="googleSearch(49)">GitHub API Keys</button>
+                </div>
+            </div>
+
+            <div class="category">
+                <h2 class="category-title">Configuration & API</h2>
+                <div class="button-grid">
+                    <button class="search-btn" onclick="googleSearch(41)">main.yml Files</button>
+                    <button class="search-btn" onclick="googleSearch(47)">Sharing API Info</button>
+                    <button class="search-btn" onclick="googleSearch(55)">JSON-RPC Files</button>
+                    <button class="search-btn" onclick="googleSearch(57)">jwks-rsa Files</button>
+                    <button class="search-btn" onclick="googleSearch(61)">docker-compose.yml</button>
+                    <button class="search-btn" onclick="googleSearch(62)">pom.xml Files</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p style="color: #64748b; font-size: 0.9em;">
+                Always conduct security testing ethically and with proper authorization
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
